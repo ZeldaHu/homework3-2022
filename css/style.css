@@ -72,13 +72,14 @@ footer a:visited{
 
 /* Requirement 1 code here*/
 
-nav{
+nav a{
   text-decoration:none;
+  text-align:left;
 }
 
 /* Requirement 2 code here*/
 nav a:hover {
-  text-decoration-style: wavy;
+  text-decoration: underline wavy;
 }
 
 
@@ -103,56 +104,60 @@ nav a:focus{
 
 }
 
-.container{
-  /* Requirement 5 code here*/
-  display:grid;
-  grid-column: 1fr 5fr 1fr;
-  grid-row-gap: 30px;
-  overflow: hidden;
-}
 
-/* Requirements 6-10 here: */
-.intro {
-background-image: url("../images/header.jpg");
-min-height:400px;
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
-
-img{
-  width: 100%;
-}
-
-/*
-#about,
-#clients,
-#method,
-#contact{
-  grid-column: 2/3;
-}*/
-
-.about-image,
-.clients-image,
-.method-image,
-.contact-image{
-  max-height:500px;
-  grid-column：1 / -1;
-
-}
-
-.text{
-  overflow:scroll;
-  text-align: center;
-  height:50%;
-}
 
 
 
 @media screen and (min-width: 700px){
+
+  .container{
+    /* Requirement 5 code here*/
+    display:grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-row-gap: 30px;
+  }
+  
+  /* Requirements 6-10 here: */
+  .intro {
+  background: url(../images/header.jpg) #DDDDDD;
+  min-height:400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  img{
+    width: 100%;
+  }
+  
+  /*
+  #about,
+  #clients,
+  #method,
+  #contact{
+    grid-column: 2/3;
+  }*/
+  
+  .about-image,
+  .clients-image,
+  .method-image,
+  .contact-image{
+    max-height:500px;
+    grid-column:1/-1;
+    overflow: hidden;
+  
+  }
+  
+  .text{
+    overflow:scroll;
+    align-self: center;
+    height:25vh;
+  }
+
   nav{
     padding-top: 35px;
+    text-align:right;
     /*Requirement 11*/
 
   }
@@ -170,17 +175,16 @@ img{
 ul{
   text-align: right;
 }
+a.skip :focus{
+  left:0px;
+  top:20px;
 
-nav .skip a:focus{
-  position:relative;
-  top:-20px;
 }
 
 .container{
   display:grid;
-  grid-template-areas:
-  "50px auto 500px auto 50px"
-  " 300px 300px 300px 300px";
+  grid-template-columns:50px auto 500px auto 50px;
+  grid-template-rows:300px 300px 300px 300px;
 }
 
 .about, 
